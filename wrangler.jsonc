@@ -3,6 +3,7 @@
   "name": "meroprayas-tools",
   "compatibility_date": "2026-09-26",
   "assets": {
-    "directory": "."
+    "directory": ".",
+    "not_found_handling": "single-page-application"
   }
 }
