@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "meroprayas-tools",
+  "compatibility_date": "2026-09-26",
+  "assets": {
+    "directory": "."
+  }
+}
