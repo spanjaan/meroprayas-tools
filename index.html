@@ -35,6 +35,17 @@
   <meta name="twitter:image:alt" content="MeroPrayas — private, offline-first browser tools">
 
   <link rel="preload" href="css/style.css" as="style">
+  <!-- Latin subsets only (the Devanagari subsets are far larger and are not used
+       above the fold). Poppins uses font-display:optional, so these preloads decide
+       whether the real font is used on the very first paint: land inside the ~100ms
+       block period and it is, otherwise the metric-matched "Poppins Fallback" faces
+       in assets/fonts/poppins.css are used for the whole visit. Either way there is
+       never a mid-session swap, which is what used to reflow the footer and cards. -->
+  <link rel="preload" href="assets/fonts/poppins-3.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/poppins-6.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/poppins-9.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/poppins-12.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/poppins-15.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/poppins.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/pdf-editor.css">
@@ -870,7 +881,7 @@
     </section>
 
     <!-- ================= About MeroPrayas ================= -->
-    <section class="view" id="view-about">
+    <section class="view" id="view-about" hidden>
       <div class="page-hero">
         <p class="eyebrow page-eyebrow">About</p>
         <h1>About MeroPrayas</h1>
@@ -963,7 +974,7 @@
     </section>
 
     <!-- ================= How It Works ================= -->
-    <section class="view" id="view-how-it-works">
+    <section class="view" id="view-how-it-works" hidden>
       <div class="page-hero">
         <p class="eyebrow page-eyebrow">Guide</p>
         <h1>How It Works</h1>
@@ -1085,7 +1096,7 @@
     </section>
 
     <!-- ================= Privacy Policy ================= -->
-    <section class="view" id="view-privacy">
+    <section class="view" id="view-privacy" hidden>
       <div class="page-hero legal-hero">
         <p class="eyebrow page-eyebrow">Legal</p>
         <h1>Privacy Policy</h1>
@@ -1230,7 +1241,7 @@
     </section>
 
     <!-- ================= Terms & Conditions ================= -->
-    <section class="view" id="view-terms">
+    <section class="view" id="view-terms" hidden>
       <div class="page-hero legal-hero">
         <p class="eyebrow page-eyebrow">Legal</p>
         <h1>Terms &amp; Conditions</h1>
@@ -1467,6 +1478,22 @@
         </div>
       </div>
     </section>
+
+  <script>
+    /* Pre-paint route gate: the shell ships every view inside <main>, but only
+       one belongs in the layout for the current URL. Resolving it here, while
+       the parser is still inside <main>, makes the first paint agree with the
+       height js/router.js settles on — otherwise the router hides four views a
+       few hundred ms later and the page (footer especially) is yanked around.
+       Keep this map in sync with ROUTES in js/router.js. */
+    (function () {
+      var map = { '/': 'home', '/compressor': 'workspace', '/unicode': 'unicode', '/pdf-editor': 'pdf-editor', '/about': 'about', '/how-it-works': 'how-it-works', '/privacy': 'privacy', '/terms': 'terms', '/contact': 'contact' };
+      var path = location.pathname.replace(/\/+$/, '') || '/';
+      var view = map[path] || (path.indexOf('/pdf-editor/') === 0 ? 'pdf-editor' : 'home');
+      var views = document.querySelectorAll('.view');
+      for (var i = 0; i < views.length; i++) views[i].hidden = views[i].id !== 'view-' + view;
+    }());
+  </script>
 
   </main>
 

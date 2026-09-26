@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-const CACHE = 'pixelpress-v39';
+const CACHE = 'pixelpress-v40';
 const MAX_RUNTIME_ENTRIES = 120;
 const ASSETS = [
   './',
