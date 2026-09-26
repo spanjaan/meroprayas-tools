@@ -1,0 +1,1727 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <meta name="theme-color" content="#0b0f19" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Free online tools by S.p. Anjaan — compress images, convert Nepali text (Preeti, Unicode & Hisab), merge and edit PDF files. Runs entirely in your browser, no uploads, works offline.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="S.p. Anjaan">
+  <meta name="application-name" content="MeroPrayas">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MeroPrayas">
+
+  <!-- Canonical + social share -->
+  <link rel="canonical" href="https://meroprayas.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MeroPrayas">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="MeroPrayas — Online Image, PDF & Unicode Converter Tools">
+  <meta property="og:description" content="Compress images, convert Nepali text between Preeti/Unicode/Hisab, and merge, split or edit PDFs — free, private and offline-first.">
+  <meta property="og:url" content="https://meroprayas.com/">
+  <meta property="og:image" content="https://meroprayas.com/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MeroPrayas — private, offline-first browser tools">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MeroPrayas — Online Image, PDF & Unicode Converter Tools">
+  <meta name="twitter:description" content="Compress images, convert Nepali text between Preeti/Unicode/Hisab, and merge, split or edit PDFs — free, private and offline-first.">
+  <meta name="twitter:image" content="https://meroprayas.com/assets/og-card.png">
+  <meta name="twitter:image:alt" content="MeroPrayas — private, offline-first browser tools">
+
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="stylesheet" href="assets/fonts/poppins.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pdf-editor.css">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192x192.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://meroprayas.com/#website",
+        "url": "https://meroprayas.com/",
+        "name": "MeroPrayas",
+        "description": "Private, offline-first browser tools for images, PDFs and Nepali text conversion.",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://meroprayas.com/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://meroprayas.com/#organization",
+        "name": "MeroPrayas",
+        "url": "https://meroprayas.com/",
+        "logo": "https://meroprayas.com/assets/icons/icon-512x512.png",
+        "founder": { "@type": "Person", "name": "S.p. Anjaan" },
+        "sameAs": [
+          "https://www.facebook.com/spanjaan",
+          "https://www.youtube.com/@spanjaan"
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://meroprayas.com/#app",
+        "url": "https://meroprayas.com/",
+        "name": "MeroPrayas Tools",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "publisher": { "@id": "https://meroprayas.com/#organization" }
+      }
+    ]
+  }
+  </script>
+
+  <script nonce="pixelpress">try { const t = localStorage.getItem('pixelpress-theme'); document.documentElement.dataset.theme = t ? (t === 'dark' ? 'dark' : '') : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : '') } catch (e) { }</script>
+  <title>MeroPrayas — Online Image, PDF & Unicode Converter Tools</title>
+</head>
+
+  <body>
+    <noscript>
+      <div style="max-width:600px;margin:80px auto;padding:2rem;font-family:system-ui,sans-serif;text-align:center;color:#0c1220;background:#fdeeee;border-radius:14px;border:1px solid #fca5a5;">
+        <p style="font-size:1.25rem;font-weight:600;margin:0 0 .5rem;">JavaScript is required</p>
+        <p style="margin:0;color:#4c5568;">MeroPrayas runs entirely in your browser. Please enable JavaScript to use these tools.</p>
+      </div>
+    </noscript>
+    <div id="offlineBanner" class="offline-banner" hidden>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l22 22"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/><path d="M10.71 5.05A16 16 0 0 1 22.56 9"/><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+      <span>You are offline — changes will sync when reconnected.</span>
+    </div>
+    <svg width="0" height="0" aria-hidden="true" style="position:absolute" class="icon-sprite">
+      <symbol id="ic-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m6 9 6 6 6-6" />
+      </symbol>
+      <symbol id="ic-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 6 15 12 9 18" />
+      </symbol>
+      <symbol id="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+      </symbol>
+      <symbol id="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+      </symbol>
+      <symbol id="ic-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+        <circle cx="9" cy="9" r="2" />
+        <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+      </symbol>
+      <symbol id="ic-type" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="4 7 4 4 20 4 20 7" />
+        <line x1="9" x2="15" y1="20" y2="20" />
+        <line x1="12" x2="12" y1="4" y2="20" />
+      </symbol>
+      <symbol id="ic-file-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+        <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+        <path d="M16 13H8M16 17H8M10 9H8" />
+      </symbol>
+      <symbol id="ic-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+        <polyline points="17 8 12 3 7 8" />
+        <line x1="12" x2="12" y1="3" y2="15" />
+      </symbol>
+      <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6 6 18M6 6l12 12" />
+      </symbol>
+      <symbol id="ic-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 2 7 12 12 22 7 12 2" />
+        <polyline points="2 17 12 22 22 17" />
+        <polyline points="2 12 12 17 22 12" />
+      </symbol>
+      <symbol id="ic-split" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <path d="M12 3v18" />
+      </symbol>
+      <symbol id="ic-compress" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3v12" />
+        <path d="m8 11 4 4 4-4" />
+        <path d="M4 21h16" />
+      </symbol>
+      <symbol id="ic-file-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+        <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+        <circle cx="10" cy="13" r="2" />
+        <path d="m20 16-3-3-3.5 3.5" />
+      </symbol>
+      <symbol id="ic-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z" />
+        <path d="m9 12 2 2 4-4" />
+      </symbol>
+      <symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
+      </symbol>
+      <symbol id="ic-infinity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 12c-2-2-3-2-5-2a3 3 0 1 0 0 6c2 0 3-2 5-2Z" />
+        <path d="M12 12c2 2 3 2 5 2a3 3 0 1 1 0-6c-2 0-3 2-5 2Z" />
+      </symbol>
+      <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12" />
+      </symbol>
+      <symbol id="ic-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+      </symbol>
+      <symbol id="ic-slash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="4" x2="20" y2="20" />
+      </symbol>
+      <symbol id="ic-grip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="6" r="1.6" /><circle cx="15" cy="6" r="1.6" />
+        <circle cx="9" cy="12" r="1.6" /><circle cx="15" cy="12" r="1.6" />
+        <circle cx="9" cy="18" r="1.6" /><circle cx="15" cy="18" r="1.6" />
+      </symbol>
+      <symbol id="ic-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="7" x2="20" y2="7" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <line x1="4" y1="17" x2="20" y2="17" />
+      </symbol>
+      <symbol id="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6 6 18M6 6l12 12" />
+      </symbol>
+      <symbol id="ic-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2Z" />
+        <circle cx="12" cy="12" r="3" />
+      </symbol>
+      <symbol id="ic-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+        <polyline points="7 10 12 15 17 10" />
+        <line x1="12" x2="12" y1="15" y2="3" />
+      </symbol>
+      <symbol id="ic-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" />
+        <circle cx="12" cy="12" r="3" />
+      </symbol>
+      <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="20" height="16" x="2" y="4" rx="2" />
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+      </symbol>
+      <symbol id="ic-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+        <path d="M12 17h.01" />
+      </symbol>
+      <symbol id="ic-facebook" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+      </symbol>
+      <symbol id="ic-whatsapp" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+      </symbol>
+      <symbol id="ic-youtube" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+      </symbol>
+    </svg>
+    <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="/" data-route aria-label="MeroPrayas home">
+      <img class="brand-mark" src="assets/icons/logo.svg" alt="">
+      <span>MeroPrayas</span>
+    </a>
+
+    <nav class="top-nav" id="primaryNav" aria-label="Primary">
+      <div class="nav-header">
+        <span class="nav-title">Menu</span>
+        <button class="btn btn-ghost nav-close" id="navClose" type="button" aria-label="Close menu">
+          <svg aria-hidden="true"><use href="#ic-close" /></svg>
+        </button>
+      </div>
+      <a class="nav-link" href="/" data-route>Home</a>
+      <details class="tools-menu" id="toolsMenu">
+        <summary class="nav-link tools-toggle" aria-label="Tools menu">Tools
+            <svg class="tools-toggle-chevron" aria-hidden="true"><use href="#ic-chevron-down" /></svg>
+        </summary>
+        <div class="tools-menu-panel">
+          <a href="/compressor" data-route>Image Compressor</a>
+          <a href="/unicode" data-route>Unicode Converter</a>
+          <a href="/pdf-editor" data-route>PDF Edit</a>
+        </div>
+      </details>
+      <a class="nav-link" href="/about" data-route>About</a>
+      <a class="nav-link" href="/contact" data-route>Contact</a>
+    </nav>
+
+    <div class="top-actions">
+      <button class="btn btn-ghost" id="installBtn" hidden>Install</button>
+      <button class="btn btn-ghost theme-toggle" id="themeBtn" type="button" aria-label="Toggle theme" aria-pressed="false">
+        <svg class="theme-icon theme-moon" aria-hidden="true"><use href="#ic-moon" /></svg>
+        <svg class="theme-icon theme-sun" aria-hidden="true" hidden><use href="#ic-sun" /></svg>
+      </button>
+      <button class="btn btn-ghost nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+        <svg class="nav-toggle-icon icon-menu" aria-hidden="true"><use href="#ic-menu" /></svg>
+      </button>
+    </div>
+    <div class="nav-scrim" id="navScrim" hidden></div>
+  </header>
+
+  <main class="shell">
+
+    <!-- ================= Home: MeroPrayas Tools Dashboard ================= -->
+    <section class="view" id="view-home">
+      <div class="hero">
+        <h1>MeroPrayas Tools</h1>
+        <p class="hero-sub">Simple, fast and useful tools for everyday work.</p>
+      </div>
+      <div class="tools-section">
+        <h2 class="tools-heading">Tools</h2>
+        <div class="tools-grid">
+          <a class="tool-card" href="/compressor" data-route>
+            <span class="tool-icon" aria-hidden="true">
+              <svg><use href="#ic-image" /></svg>
+            </span>
+            <span class="tool-body">
+              <span class="tool-name">Image Compressor</span>
+              <span class="tool-desc">Compress and optimize images with quality, format and size controls.</span>
+            </span>
+            <svg class="tool-chevron" aria-hidden="true"><use href="#ic-chevron-right" /></svg>
+          </a>
+
+          <a class="tool-card" href="/unicode" data-route>
+            <span class="tool-icon" aria-hidden="true">
+              <svg><use href="#ic-type" /></svg>
+            </span>
+            <span class="tool-body">
+              <span class="tool-name">Unicode Converter</span>
+              <span class="tool-desc">Convert Nepali text between Unicode and Preeti.</span>
+            </span>
+            <svg class="tool-chevron" aria-hidden="true"><use href="#ic-chevron-right" /></svg>
+          </a>
+
+          <a class="tool-card" href="/pdf-editor" data-route>
+            <span class="tool-icon" aria-hidden="true">
+              <svg><use href="#ic-file-text" /></svg>
+            </span>
+            <span class="tool-body">
+              <span class="tool-name">PDF Edit</span>
+              <span class="tool-desc">Merge, split, compress and convert PDF files.</span>
+            </span>
+            <svg class="tool-chevron" aria-hidden="true"><use href="#ic-chevron-right" /></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Compressor / Editor / Resizer workspace ================= -->
+    <section class="view" id="view-workspace" hidden>
+      <div class="workspace-heading">
+        <h1 id="workspaceTitle">Image Compressor</h1>
+        <p id="workspaceSubtitle">Compress and optimize images with quality, format and size controls.</p>
+      </div>
+
+      <div class="workspace">
+        <div class="card uploader" id="dropZone">
+          <input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp,image/gif,image/bmp,image/svg+xml"
+            multiple hidden>
+            <div class="upload-icon" aria-hidden="true">
+              <svg><use href="#ic-upload" /></svg>
+            </div>
+          <h2>Drop images here</h2>
+          <p>or choose files from your device</p>
+          <button class="btn btn-primary btn-lg" id="chooseBtn" type="button">Choose images</button>
+          <p class="hint">JPG · PNG · WebP · GIF · BMP · SVG · up to your browser's limits</p>
+        </div>
+
+        <div class="card editor-card" id="editorCard" hidden>
+          <div class="card-heading">
+            <div>
+              <p class="eyebrow small">Your images</p>
+              <h2><span id="imageCountHeading">0</span> images ready</h2>
+              <p id="summary">Upload images to begin.</p>
+            </div>
+            <div class="editor-actions">
+              <button class="btn btn-primary" id="processAllBtn" type="button">Compress all</button>
+              <button class="btn btn-secondary" id="downloadAllBtn" disabled>Download all</button>
+              <button class="btn btn-danger" id="clearBtn">Clear</button>
+            </div>
+          </div>
+          <div id="imageList" class="image-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Unicode Converter ================= -->
+    <section class="view" id="view-unicode" hidden>
+      <div class="workspace-heading">
+        <h1>Unicode Converter</h1>
+        <p>Convert Nepali text between Unicode and Preeti.</p>
+      </div>
+
+      <div class="uc-shell">
+        <div class="card uc-controls">
+          <div class="uc-formats">
+            <div class="field">
+              <label for="ucFrom">From</label>
+              <select id="ucFrom" class="select">
+                <option value="unicode">Unicode</option>
+                <option value="preeti" selected>Preeti</option>
+                <option value="hisab">Hisab</option>
+              </select>
+            </div>
+            <button class="btn btn-ghost uc-swap" id="ucSwap" type="button" title="Swap formats" aria-label="Swap formats">⇄</button>
+            <div class="field">
+              <label for="ucTo">To</label>
+              <select id="ucTo" class="select">
+                <option value="unicode" selected>Unicode</option>
+                <option value="preeti">Preeti</option>
+                <option value="hisab">Hisab</option>
+              </select>
+            </div>
+            <button class="btn btn-primary uc-convert-btn" id="ucConvert" type="button" disabled>Convert</button>
+          </div>
+          <label class="uc-live">
+            <input type="checkbox" id="ucLive" checked>
+            Live Conversion
+          </label>
+        </div>
+
+        <div class="uc-panels">
+          <div class="card uc-panel">
+            <div class="uc-panel-head">
+              <span class="uc-panel-label">Input Text</span>
+              <span class="uc-format-tag" id="ucInputFormat">Preeti</span>
+              <span class="uc-count" id="ucInputCount">0 characters</span>
+              <div class="uc-panel-actions">
+                <button class="btn btn-small btn-ghost" id="ucPaste" type="button">Paste</button>
+                <button class="btn btn-small btn-ghost" id="ucClear" type="button">Clear</button>
+              </div>
+            </div>
+            <textarea class="uc-textarea" id="ucInput" spellcheck="false" placeholder="lk|tL 6]S:6 oxfF 6fOk ug{'xf]; jf k]:6 ug{'xf]; ."></textarea>
+          </div>
+
+          <div class="card uc-panel">
+            <div class="uc-panel-head">
+              <span class="uc-panel-label">Converted Text</span>
+              <span class="uc-format-tag" id="ucOutputFormat">Unicode</span>
+              <span class="uc-count" id="ucOutputCount">0 characters</span>
+              <div class="uc-panel-actions">
+                <button class="btn btn-small" id="ucCopy" type="button" disabled>Copy</button>
+                <button class="btn btn-small btn-ghost" id="ucDownload" type="button" disabled>Download TXT</button>
+              </div>
+            </div>
+            <textarea class="uc-textarea" id="ucOutput" readonly spellcheck="false" placeholder="कन्भर्टेड युनीकोड टेक्स्ट यहाँ देखीनेछ ।"></textarea>
+          </div>
+        </div>
+
+        <p class="uc-status" id="ucStatus" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- ================= PDF Editor workspace ================= -->
+    <section class="view" id="view-pdf-editor" hidden>
+      <div class="pdf-shell">
+
+        <header class="pdf-hero">
+          <h1 id="pdfHeroTitle">PDF Tools</h1>
+          <p class="pdf-hero-sub">Everything you need to work with PDF files.</p>
+          <p class="pdf-hero-support">Merge, split, compress and convert your PDF files quickly and securely.</p>
+        </header>
+
+        <nav class="pdf-toolbar" role="tablist" aria-label="PDF tools">
+          <button class="pdf-tab" id="tab-merge" type="button" role="tab" aria-selected="true" aria-controls="panel-merge" data-tool="merge">
+            <svg aria-hidden="true"><use href="#ic-layers" /></svg>
+            <span>PDF Merge</span>
+          </button>
+          <button class="pdf-tab" id="tab-split" type="button" role="tab" aria-selected="false" aria-controls="panel-split" data-tool="split">
+            <svg aria-hidden="true"><use href="#ic-split" /></svg>
+            <span>PDF Split</span>
+          </button>
+          <button class="pdf-tab" id="tab-compress" type="button" role="tab" aria-selected="false" aria-controls="panel-compress" data-tool="compress">
+            <svg aria-hidden="true"><use href="#ic-compress" /></svg>
+            <span>PDF Compress</span>
+          </button>
+          <button class="pdf-tab" id="tab-jpg-to-pdf" type="button" role="tab" aria-selected="false" aria-controls="panel-jpg-to-pdf" data-tool="jpg-to-pdf">
+            <svg aria-hidden="true"><use href="#ic-image" /></svg>
+            <span>JPG to PDF</span>
+          </button>
+          <button class="pdf-tab" id="tab-pdf-to-jpg" type="button" role="tab" aria-selected="false" aria-controls="panel-pdf-to-jpg" data-tool="pdf-to-jpg">
+            <svg aria-hidden="true"><use href="#ic-file-image" /></svg>
+            <span>PDF to JPG</span>
+          </button>
+        </nav>
+
+        <div class="pdf-alert" id="pdfAlert" role="alert" hidden></div>
+
+        <main class="pdf-workspace">
+
+          <!-- ================= PDF MERGE ================= -->
+          <section class="pdf-tool-panel" id="panel-merge" data-tool="merge" role="tabpanel" aria-labelledby="tab-merge">
+            <div class="pdf-tool-head">
+              <h2>Merge PDFs</h2>
+              <p>Combine multiple PDFs into one file, in any order.</p>
+            </div>
+
+            <div class="pdf-upload-zone" id="mergeDropZone">
+              <input id="mergeFileInput" type="file" accept=".pdf,application/pdf" multiple hidden>
+              <div class="pdf-upload-icon" aria-hidden="true">
+                <svg><use href="#ic-upload" /></svg>
+              </div>
+              <p class="pdf-upload-title">Drag &amp; Drop your PDF here</p>
+              <p class="pdf-upload-or">or</p>
+              <button class="btn btn-primary btn-lg" id="mergeChooseBtn" type="button">Select PDF</button>
+              <p class="pdf-upload-formats">Supported format: PDF</p> <p class="pdf-upload-note">Maximum file size: 250 MB. Files are processed locally in your browser.</p>
+            </div>
+
+            <div class="pdf-files-card" id="mergeFilesCard" hidden>
+              <div class="pdf-files-head">
+                <div class="pdf-files-heading">
+                  <h3><span id="mergeCountHeading">0</span> PDFs ready</h3>
+                  <p id="mergeSummary">Add PDFs to begin.</p>
+                </div>
+                <button class="btn btn-ghost btn-small" id="mergeClearBtn" type="button">New files</button>
+              </div>
+              <div id="mergeList" class="pdf-file-list" aria-live="polite"></div>
+              <p class="pdf-reorder-hint">Drag files to change their order.</p>
+            </div>
+
+            <div class="pdf-cta">
+              <button class="btn btn-primary btn-lg" id="mergeBtn" type="button">Merge PDFs</button>
+            </div>
+
+            <div class="pdf-result-card" id="mergeResultCard" hidden>
+              <div class="pdf-result-head">
+                <span class="pdf-success-mark" aria-hidden="true">
+                  <svg><use href="#ic-check" /></svg>
+                </span>
+                <div class="pdf-result-heading">
+                  <p class="pdf-result-eyebrow">PDF merged successfully.</p>
+                  <h3>merged.pdf</h3>
+                  <p id="mergeResultMeta"></p>
+                </div>
+                <div class="pdf-result-actions">
+                  <button class="btn btn-ghost" id="mergeNewBtn" type="button">New files</button>
+                  <button class="btn btn-primary" id="mergeDownloadBtn" type="button">Download</button>
+                </div>
+              </div>
+              <div class="pdf-result-body">
+                <div class="pdf-result-preview" id="mergePreview"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= PDF SPLIT ================= -->
+          <section class="pdf-tool-panel" id="panel-split" data-tool="split" role="tabpanel" aria-labelledby="tab-split" hidden>
+            <div class="pdf-tool-head">
+              <h2>Split PDF</h2>
+              <p>Split a PDF into page ranges, selected pages, or one file per page.</p>
+            </div>
+
+            <div class="pdf-upload-zone" id="splitDropZone">
+              <input id="splitFileInput" type="file" accept=".pdf,application/pdf" hidden>
+              <div class="pdf-upload-icon" aria-hidden="true">
+                <svg><use href="#ic-upload" /></svg>
+              </div>
+              <p class="pdf-upload-title">Drag &amp; Drop your PDF here</p>
+              <p class="pdf-upload-or">or</p>
+              <button class="btn btn-primary btn-lg" id="splitChooseBtn" type="button">Select PDF</button>
+              <p class="pdf-upload-formats">Supported format: PDF</p> <p class="pdf-upload-note">Maximum file size: 250 MB. Files are processed locally in your browser.</p>
+            </div>
+
+            <div class="pdf-files-card" id="splitFilesCard" hidden>
+              <div class="pdf-files-head">
+                <div class="pdf-files-heading">
+                  <h3 id="splitFileName"></h3>
+                  <p id="splitFileMeta"></p>
+                </div>
+                <button class="btn btn-ghost btn-small" id="splitClearBtn" type="button">New files</button>
+              </div>
+
+              <div class="pdf-settings">
+                <fieldset class="pdf-option-group">
+                  <legend>Split mode</legend>
+                  <label class="option-card">
+                    <input type="radio" name="splitMode" value="ranges" checked>
+                    <span><strong>Page ranges</strong><small>Extract ranges such as 1-3, 5-8, 10</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="splitMode" value="selected">
+                    <span><strong>Selected pages</strong><small>Pick individual pages to extract</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="splitMode" value="every">
+                    <span><strong>Split every page</strong><small>One PDF file per page</small></span>
+                  </label>
+                </fieldset>
+
+                <div class="pdf-field-block" id="splitRangesWrap">
+                  <label class="field" for="splitRangesInput"><span>Page ranges</span></label>
+                  <textarea id="splitRangesInput" rows="3" placeholder="1-3, 5-8, 10" spellcheck="false"></textarea>
+                  <p class="help">Separate ranges with commas or new lines, e.g. <strong>1-3, 5-8, 10</strong>. Every
+                    extracted range becomes its own PDF.</p>
+                  <p class="pdf-range-error" id="splitRangesError" role="alert" hidden></p>
+                </div>
+
+                <div class="pdf-field-block" id="splitPagesWrap" hidden>
+                  <div class="split-pages-head">
+                    <span class="split-pages-label">Select pages to extract</span>
+                    <div class="editor-actions">
+                      <button class="btn btn-ghost btn-small" id="splitSelectAllBtn" type="button">Select all</button>
+                      <button class="btn btn-ghost btn-small" id="splitSelectNoneBtn" type="button">Deselect all</button>
+                    </div>
+                  </div>
+                  <div class="split-page-grid" id="splitPageGrid"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pdf-cta">
+              <button class="btn btn-primary btn-lg" id="splitBtn" type="button" disabled>Split PDF</button>
+              <p class="help" id="splitBtnHint">Choose a split mode to begin.</p>
+            </div>
+
+            <div class="pdf-result-card" id="splitResultsCard" hidden>
+              <div class="pdf-result-head">
+                <span class="pdf-success-mark" aria-hidden="true">
+                  <svg><use href="#ic-check" /></svg>
+                </span>
+                <div class="pdf-result-heading">
+                  <p class="pdf-result-eyebrow">PDF split successfully.</p>
+                  <h3><span id="splitResultCount">0</span> PDFs created</h3>
+                  <p id="splitResultMeta"></p>
+                </div>
+                <div class="pdf-result-actions">
+                  <button class="btn btn-ghost" id="splitNewBtn" type="button">New files</button>
+                  <button class="btn btn-primary" id="splitDownloadAllBtn" type="button">Download All</button>
+                </div>
+              </div>
+              <div id="splitResultList" class="pdf-result-grid"></div>
+            </div>
+          </section>
+
+          <!-- ================= PDF COMPRESS ================= -->
+          <section class="pdf-tool-panel" id="panel-compress" data-tool="compress" role="tabpanel" aria-labelledby="tab-compress" hidden>
+            <div class="pdf-tool-head">
+              <h2>Compress PDF</h2>
+              <p>Reduce PDF file size with clear quality trade-offs.</p>
+            </div>
+
+            <div class="pdf-upload-zone" id="compressDropZone">
+              <input id="compressFileInput" type="file" accept=".pdf,application/pdf" multiple hidden>
+              <div class="pdf-upload-icon" aria-hidden="true">
+                <svg><use href="#ic-upload" /></svg>
+              </div>
+              <p class="pdf-upload-title">Drag &amp; Drop your PDF here</p>
+              <p class="pdf-upload-or">or</p>
+              <button class="btn btn-primary btn-lg" id="compressChooseBtn" type="button">Select PDF</button>
+              <p class="pdf-upload-formats">Supported format: PDF</p><p class="pdf-upload-note">Maximum file size: 250 MB. Files are processed locally in your browser.</p>
+            </div>
+
+            <div class="pdf-files-card" id="compressFilesCard" hidden>
+              <div class="pdf-files-head">
+                <div class="pdf-files-heading">
+                  <h3><span id="compressCountHeading">0</span> PDFs ready</h3>
+                  <p id="compressSummary">Add PDFs and choose a compression level.</p>
+                </div>
+                <button class="btn btn-ghost btn-small" id="compressClearBtn" type="button">New files</button>
+              </div>
+
+              <div class="pdf-side-layout">
+                <div id="compressList" class="pdf-file-list" aria-live="polite"></div>
+
+                <aside class="pdf-settings" aria-label="Compression settings">
+                  <fieldset class="pdf-option-group">
+                    <legend>Compression level</legend>
+                    <label class="option-card">
+                      <input type="radio" name="compressLevel" value="high">
+                      <span><strong>High Compression</strong><small>Smallest file size, lower image quality.</small></span>
+                    </label>
+                    <label class="option-card">
+                      <input type="radio" name="compressLevel" value="balanced" checked>
+                      <span><strong>Balanced</strong><small>Good balance between size and quality.</small></span>
+                    </label>
+                    <label class="option-card">
+                      <input type="radio" name="compressLevel" value="low">
+                      <span><strong>Low Compression</strong><small>Best quality, less size reduction.</small></span>
+                    </label>
+                  </fieldset>
+                  <p class="help">PDFs are re-encoded locally — nothing is uploaded. Text-heavy PDFs are often already
+                    compact, so they may not shrink much; image-heavy (scanned) PDFs usually compress well.</p>
+                </aside>
+              </div>
+            </div>
+
+            <div class="pdf-cta">
+              <button class="btn btn-primary btn-lg" id="compressBtn" type="button">Compress PDF</button>
+            </div>
+
+            <div class="pdf-result-card" id="compressResultsCard" hidden>
+              <div class="pdf-result-head">
+                <span class="pdf-success-mark" aria-hidden="true">
+                  <svg><use href="#ic-check" /></svg>
+                </span>
+                <div class="pdf-result-heading">
+                  <p class="pdf-result-eyebrow">PDF compressed successfully.</p>
+                  <h3>Compressed PDFs</h3>
+                  <p id="compressResultsMeta"></p>
+                </div>
+                <div class="pdf-result-actions">
+                  <button class="btn btn-ghost" id="compressNewBtn" type="button">New files</button>
+                </div>
+              </div>
+              <div id="compressResultList" class="pdf-result-grid"></div>
+            </div>
+          </section>
+
+          <!-- ================= JPG TO PDF ================= -->
+          <section class="pdf-tool-panel" id="panel-jpg-to-pdf" data-tool="jpg-to-pdf" role="tabpanel" aria-labelledby="tab-jpg-to-pdf" hidden>
+            <div class="pdf-tool-head">
+              <h2>JPG to PDF</h2>
+              <p>Turn JPG, JPEG and PNG images into a PDF document.</p>
+            </div>
+
+            <div class="pdf-upload-zone" id="jpgDropZone">
+              <input id="jpgFileInput" type="file" accept=".jpg,.jpeg,.png,image/jpeg,image/png" multiple hidden>
+              <div class="pdf-upload-icon" aria-hidden="true">
+                <svg><use href="#ic-upload" /></svg>
+              </div>
+              <p class="pdf-upload-title">Drag &amp; Drop your images here</p>
+              <p class="pdf-upload-or">or</p>
+              <button class="btn btn-primary btn-lg" id="jpgChooseBtn" type="button">Select Images</button>
+              <p class="pdf-upload-formats">JPG, JPEG, PNG</p> <p class="pdf-upload-note">Very large images may take longer to process.</p>
+            </div>
+
+            <div class="pdf-files-card" id="jpgFilesCard" hidden>
+              <div class="pdf-files-head">
+                <div class="pdf-files-heading">
+                  <h3><span id="jpgCountHeading">0</span> images ready</h3>
+                  <p id="jpgSummary">Add images to begin.</p>
+                </div>
+                <button class="btn btn-ghost btn-small" id="jpgClearBtn" type="button">New files</button>
+              </div>
+
+              <div class="pdf-side-layout">
+                <div id="jpgList" class="pdf-file-list" aria-live="polite"></div>
+
+                <aside class="pdf-settings" aria-label="PDF page settings">
+                  <fieldset class="pdf-option-group">
+                    <legend>Page size</legend>
+                    <label class="option-card">
+                      <input type="radio" name="jpgPageSize" value="a4" checked>
+                      <span><strong>A4</strong><small>210 × 297 mm (portrait)</small></span>
+                    </label>
+                    <label class="option-card">
+                      <input type="radio" name="jpgPageSize" value="letter">
+                      <span><strong>Letter</strong><small>8.5 × 11 in (portrait)</small></span>
+                    </label>
+                    <label class="option-card">
+                      <input type="radio" name="jpgPageSize" value="original">
+                      <span><strong>Original size</strong><small>Each page matches its image dimensions</small></span>
+                    </label>
+                  </fieldset>
+                  <fieldset class="pdf-option-group">
+                    <legend>Image fit</legend>
+                    <label class="option-card">
+                      <input type="radio" name="jpgFit" value="fit" checked>
+                      <span><strong>Fit within page</strong><small>Scale to fit, keep the aspect ratio, centered</small></span>
+                    </label>
+                    <label class="option-card">
+                      <input type="radio" name="jpgFit" value="fill">
+                      <span><strong>Fill page</strong><small>Cover the full page, crop overflow</small></span>
+                    </label>
+                  </fieldset>
+                  <p class="help">Each image becomes one PDF page, in the order shown.</p>
+                </aside>
+              </div>
+            </div>
+
+            <div class="pdf-cta">
+              <button class="btn btn-primary btn-lg" id="jpgToPdfBtn" type="button">Convert to PDF</button>
+            </div>
+
+            <div class="pdf-result-card" id="jpgResultCard" hidden>
+              <div class="pdf-result-head">
+                <span class="pdf-success-mark" aria-hidden="true">
+                  <svg><use href="#ic-check" /></svg>
+                </span>
+                <div class="pdf-result-heading">
+                  <p class="pdf-result-eyebrow">Images converted to PDF successfully.</p>
+                  <h3>images.pdf</h3>
+                  <p id="jpgResultMeta"></p>
+                </div>
+                <div class="pdf-result-actions">
+                  <button class="btn btn-ghost" id="jpgNewBtn" type="button">New files</button>
+                  <button class="btn btn-primary" id="jpgResultDownloadBtn" type="button">Download</button>
+                </div>
+              </div>
+              <div class="pdf-result-body">
+                <div class="pdf-result-preview" id="jpgResultPreview"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= PDF TO JPG ================= -->
+          <section class="pdf-tool-panel" id="panel-pdf-to-jpg" data-tool="pdf-to-jpg" role="tabpanel" aria-labelledby="tab-pdf-to-jpg" hidden>
+            <div class="pdf-tool-head">
+              <h2>PDF to JPG</h2>
+              <p>Convert PDF pages into JPG images at your chosen resolution.</p>
+            </div>
+
+            <div class="pdf-upload-zone" id="jpgOutDropZone">
+              <input id="jpgOutFileInput" type="file" accept=".pdf,application/pdf" hidden>
+              <div class="pdf-upload-icon" aria-hidden="true">
+                <svg><use href="#ic-upload" /></svg>
+              </div>
+              <p class="pdf-upload-title">Drag &amp; Drop your PDF here</p>
+              <p class="pdf-upload-or">or</p>
+              <button class="btn btn-primary btn-lg" id="jpgOutChooseBtn" type="button">Select PDF</button>
+              <p class="pdf-upload-formats">Supported format: PDF</p><p class="pdf-upload-note">Maximum file size: 250 MB. Files are processed locally in your browser.</p>
+            </div>
+
+            <div class="pdf-files-card" id="jpgOutCard" hidden>
+              <div class="pdf-files-head">
+                <div class="pdf-files-heading">
+                  <h3 id="jpgOutFileName"></h3>
+                  <p id="jpgOutFileMeta"></p>
+                </div>
+                <button class="btn btn-ghost btn-small" id="jpgOutClearBtn" type="button">New files</button>
+              </div>
+
+              <div class="pdf-side-layout">
+                <div class="pdf-page-picker">
+                  <div class="split-pages-head">
+                    <span class="split-pages-label">Pages (<span id="jpgOutSelectedCount">0</span> selected)</span>
+                    <div class="editor-actions">
+                      <button class="btn btn-ghost btn-small" id="jpgOutSelectAllBtn" type="button">Select all</button>
+                      <button class="btn btn-ghost btn-small" id="jpgOutSelectNoneBtn" type="button">Deselect all</button>
+                    </div>
+                  </div>
+                  <div class="jpgout-page-grid" id="jpgOutPageGrid"></div>
+                </div>
+
+                <aside class="pdf-settings" aria-label="JPG output settings">
+                  <fieldset class="pdf-option-group">
+                    <legend>Output quality</legend>
+                    <label class="option-card">
+                      <input type="radio" name="jpgOutQuality" value="low">
+                      <span><strong>Low</strong><small>Smaller files, fast previews (72 DPI)</small></span>
+                    </label>
+                    <label class="option-card">
+                      <input type="radio" name="jpgOutQuality" value="medium" checked>
+                      <span><strong>Medium</strong><small>Balanced quality and size (150 DPI)</small></span>
+                    </label>
+                    <label class="option-card">
+                      <input type="radio" name="jpgOutQuality" value="high">
+                      <span><strong>High</strong><small>Sharp print-quality output (300 DPI)</small></span>
+                    </label>
+                    <label class="option-card">
+                      <input type="radio" name="jpgOutQuality" value="custom">
+                      <span><strong>Custom</strong><small>Choose resolution and quality yourself</small></span>
+                    </label>
+                  </fieldset>
+
+                  <div class="pdf-field-block" id="jpgOutCustomWrap" hidden>
+                    <div class="setting-label-row"><label for="jpgOutDpi">Resolution (DPI)</label><strong id="jpgOutDpiValue">150</strong></div>
+                    <input id="jpgOutDpi" class="range" type="range" min="36" max="600" value="150" step="6">
+                    <div class="range-labels"><span>36</span><span>600</span></div>
+                    <div class="setting-label-row jpgout-quality-row"><label for="jpgOutJpegQuality">JPEG quality</label><strong id="jpgOutJpegValue">90%</strong></div>
+                    <input id="jpgOutJpegQuality" class="range" type="range" min="40" max="100" value="90">
+                    <div class="range-labels"><span>Smaller</span><span>Sharper</span></div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+
+            <div class="pdf-cta">
+              <button class="btn btn-primary btn-lg" id="jpgOutBtn" type="button" disabled>Convert to JPG</button>
+            </div>
+
+            <div class="pdf-result-card" id="jpgOutResultsCard" hidden>
+              <div class="pdf-result-head">
+                <span class="pdf-success-mark" aria-hidden="true">
+                  <svg><use href="#ic-check" /></svg>
+                </span>
+                <div class="pdf-result-heading">
+                  <p class="pdf-result-eyebrow">PDF pages converted to JPG successfully.</p>
+                  <h3><span id="jpgOutResultCount">0</span> images</h3>
+                  <p id="jpgOutResultMeta"></p>
+                </div>
+                <div class="pdf-result-actions">
+                  <button class="btn btn-ghost" id="jpgOutNewBtn" type="button">New files</button>
+                  <button class="btn btn-primary" id="jpgOutDownloadAllBtn" type="button">Download All (ZIP)</button>
+                </div>
+              </div>
+              <div id="jpgOutResultList" class="pdf-result-grid"></div>
+            </div>
+          </section>
+
+          <!-- ================= Shared processing state ================= -->
+          <div class="pdf-job-card" id="pdfJobCard" hidden>
+            <div class="pdf-job-row">
+              <span class="pdf-job-chip"><span class="pdf-job-spinner" aria-hidden="true"></span><span id="pdfJobChipText">Processing</span></span>
+              <span class="pdf-job-text" id="pdfJobText" aria-live="polite">Processing PDF…</span>
+              <button class="btn btn-ghost btn-small" id="pdfJobCancelBtn" type="button">Cancel</button>
+            </div>
+            <div class="pdf-job-progress" id="pdfJobProgress" role="progressbar" aria-label="Processing progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <span id="pdfJobBar" style="width:0%"></span>
+            </div>
+            <p class="pdf-job-hint">Please don't close this page.</p>
+          </div>
+
+        </main>
+
+      </div>
+    </section>
+
+    <!-- ================= About MeroPrayas ================= -->
+    <section class="view" id="view-about">
+      <div class="page-hero">
+        <p class="eyebrow page-eyebrow">About</p>
+        <h1>About MeroPrayas</h1>
+        <p class="page-lede">
+          MeroPrayas is a browser-based utility toolbox designed to provide useful tools directly in
+          your browser. It is a single-page application that works online and offline, without accounts,
+          uploads or queues.
+        </p>
+      </div>
+
+      <div class="info-stack">
+        <article class="card info-panel">
+          <h2>Mission &amp; purpose</h2>
+          <p>
+            MeroPrayas is built as a fast, private, offline-first toolkit for everyday image, text and
+            PDF work. The idea is simple: whenever a task can be done in your browser, it should be — no
+            waiting for uploads, no registration, no watermarks, no hidden limits.
+          </p>
+        </article>
+
+        <section class="info-section" aria-label="Available tools">
+          <h2 class="info-section-title">Tools</h2>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true"><svg><use href="#ic-image" /></svg></span>
+              <h3>Image Compressor</h3>
+              <p>
+                Compress, resize and edit images directly in the browser. Adjust quality, choose the
+                output format, crop with ratio presets, rotate, flip, straighten with perspective
+                correction, resize to a preset or custom size, and process multiple images at once.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true"><svg><use href="#ic-type" /></svg></span>
+              <h3>Unicode Converter</h3>
+              <p>
+                Convert Nepali text between Unicode, Preeti and Hisab. Both conversion directions are
+                available with live conversion, format swapping, copy and download. Conversion is pure
+                text mapping performed locally in your browser.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true"><svg><use href="#ic-file-text" /></svg></span>
+              <h3>PDF Tools</h3>
+              <p>
+                Merge PDFs with drag &amp; drop ordering, split by ranges, selected pages or one page per
+                file, compress with clear quality trade-offs, turn images into a PDF, or export PDF
+                pages as JPG images.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <article class="card info-panel">
+          <h2>Offline-first philosophy</h2>
+          <p>
+            MeroPrayas is designed with an offline-first approach. Wherever technically possible,
+            processing happens locally in the user's browser rather than sending files to a remote
+            server. After the first visit, the service worker caches the app shell so the tools keep
+            working without a connection.
+          </p>
+          <h2>Privacy-focused by design</h2>
+          <p>
+            Files you select are used to run the tool you chose — they are not intentionally collected,
+            stored or uploaded by the application. There are no accounts, ads or analytics. See the
+            Privacy Policy for the full, accurate picture.
+          </p>
+        </article>
+
+        <div class="dev-card">
+          <div class="dev-card-avatar">
+            <img class="page-avatar" src="assets/developer-avatar.svg" alt="S.p. Anjaan" width="76" height="76">
+          </div>
+          <div class="dev-meta">
+            <p class="page-dev-kicker">Developer</p>
+            <p class="page-dev-name">S.p. Anjaan</p>
+            <p class="page-dev-role">Built MeroPrayas as a fast, private, offline-first toolkit for everyday
+              image &amp; PDF work.</p>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn btn-primary btn-lg" href="/" data-route>Explore the tools</a>
+          <a class="btn btn-secondary btn-lg" href="/how-it-works" data-route>How it works</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= How It Works ================= -->
+    <section class="view" id="view-how-it-works">
+      <div class="page-hero">
+        <p class="eyebrow page-eyebrow">Guide</p>
+        <h1>How It Works</h1>
+        <p class="page-lede">
+          Every tool follows the same simple pattern: choose a tool, add your files or text, adjust the
+          options, let MeroPrayas process everything locally, preview and download.
+        </p>
+      </div>
+
+      <div class="info-stack">
+        <section class="info-section" aria-label="General workflow">
+          <h2 class="info-section-title">The general workflow</h2>
+          <ol class="flow-steps">
+            <li class="flow-step">
+              <span class="flow-step-num" aria-hidden="true">01</span>
+              <div>
+                <h3>Choose a tool</h3>
+                <p>Pick Image Compressor, Unicode Converter or the PDF tools from the dashboard.</p>
+              </div>
+            </li>
+            <li class="flow-step">
+              <span class="flow-step-num" aria-hidden="true">02</span>
+              <div>
+                <h3>Select your file or enter text</h3>
+                <p>Drag &amp; drop or browse for files, or paste the text you want to convert.</p>
+              </div>
+            </li>
+            <li class="flow-step">
+              <span class="flow-step-num" aria-hidden="true">03</span>
+              <div>
+                <h3>Adjust the options</h3>
+                <p>Set quality, format, crop, resize, page size, split ranges and similar options.</p>
+              </div>
+            </li>
+            <li class="flow-step">
+              <span class="flow-step-num" aria-hidden="true">04</span>
+              <div>
+                <h3>Process locally</h3>
+                <p>Processing runs in your browser. Your files are not intentionally uploaded.</p>
+              </div>
+            </li>
+            <li class="flow-step">
+              <span class="flow-step-num" aria-hidden="true">05</span>
+              <div>
+                <h3>Preview the result</h3>
+                <p>Review sizes, dimensions and output before you commit or download.</p>
+              </div>
+            </li>
+            <li class="flow-step">
+              <span class="flow-step-num" aria-hidden="true">06</span>
+              <div>
+                <h3>Download</h3>
+                <p>Save the finished file to your device, or download everything at once.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="info-section" aria-label="Tool workflows">
+          <h2 class="info-section-title">Tool-by-tool guide</h2>
+
+          <article class="card info-panel tool-flow">
+            <div class="tool-flow-head">
+              <span class="feature-icon" aria-hidden="true"><svg><use href="#ic-image" /></svg></span>
+              <div>
+                <h3>Image Compressor</h3>
+                <p>Compress, resize and edit your images in the browser.</p>
+              </div>
+            </div>
+            <ol class="tool-flow-list">
+              <li><strong>Select images</strong> — drag &amp; drop or choose files (JPG, PNG, WebP, GIF, BMP, SVG). You can add many at once.</li>
+              <li><strong>Edit (optional)</strong> — each image opens in the editor where you can crop, rotate, flip, straighten and resize.</li>
+              <li><strong>Adjust compression</strong> — set the quality slider and pick the output format (original, WebP, JPEG or PNG).</li>
+              <li><strong>Preview</strong> — check the expected result with the live preview before compressing.</li>
+              <li><strong>Compress &amp; download</strong> — run compression on one image or all, then download the result.</li>
+            </ol>
+          </article>
+
+          <article class="card info-panel tool-flow">
+            <div class="tool-flow-head">
+              <span class="feature-icon" aria-hidden="true"><svg><use href="#ic-type" /></svg></span>
+              <div>
+                <h3>Unicode Converter</h3>
+                <p>Convert Nepali text between Unicode, Preeti and Hisab.</p>
+              </div>
+            </div>
+            <ol class="tool-flow-list">
+              <li><strong>Enter or paste text</strong> — type your text, paste it, or use the Paste button.</li>
+              <li><strong>Choose the direction</strong> — select From / To (Unicode, Preeti or Hisab) or use the swap button.</li>
+              <li><strong>Convert</strong> — live conversion updates as you type, or press Convert for a manual pass.</li>
+              <li><strong>Copy or download</strong> — copy the converted text or download it as a UTF-8 <code>.txt</code> file.</li>
+            </ol>
+          </article>
+
+          <article class="card info-panel tool-flow">
+            <div class="tool-flow-head">
+              <span class="feature-icon" aria-hidden="true"><svg><use href="#ic-file-text" /></svg></span>
+              <div>
+                <h3>PDF Tools</h3>
+                <p>Merge, split, compress and convert PDF files.</p>
+              </div>
+            </div>
+            <ol class="tool-flow-list">
+              <li><strong>Choose an operation</strong> — Merge, Split, Compress, JPG to PDF or PDF to JPG from the PDF toolbar.</li>
+              <li><strong>Select files</strong> — drag &amp; drop or browse for the PDFs or images you need.</li>
+              <li><strong>Adjust the options</strong> — reorder files, set split ranges, pick a compression level, page size or output DPI.</li>
+              <li><strong>Process locally</strong> — PDFs and images are processed in your browser; nothing is uploaded.</li>
+              <li><strong>Preview &amp; download</strong> — check summaries and download individual files or a ZIP of everything.</li>
+            </ol>
+          </article>
+        </section>
+
+        <div class="cta-row">
+          <a class="btn btn-primary btn-lg" href="/compressor" data-route>Try Image Compressor</a>
+          <a class="btn btn-secondary btn-lg" href="/unicode" data-route>Open Unicode Converter</a>
+          <a class="btn btn-secondary btn-lg" href="/pdf-editor" data-route>Open PDF Tools</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Privacy Policy ================= -->
+    <section class="view" id="view-privacy">
+      <div class="page-hero legal-hero">
+        <p class="eyebrow page-eyebrow">Legal</p>
+        <h1>Privacy Policy</h1>
+        <p class="page-lede">
+          This policy describes how the MeroPrayas application handles the information and files you
+          work with. It reflects the current technical build of the app.
+        </p>
+        <p class="page-meta">Last updated: 9 September 2026</p>
+      </div>
+
+      <div class="legal-layout">
+        <nav class="toc" aria-label="On this page">
+          <h2 class="toc-head">
+            <span>On this page</span>
+            <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="privacy-toc-list">
+              <svg aria-hidden="true"><use href="#ic-chevron-down" /></svg>
+              <span class="sr-only">Show table of contents</span>
+            </button>
+          </h2>
+          <ol id="privacy-toc-list">
+            <li><a href="#pr-overview">Overview</a></li>
+            <li><a href="#pr-not-collected">What we do not intend to collect</a></li>
+            <li><a href="#pr-local">Local file processing</a></li>
+            <li><a href="#pr-storage">Browser storage</a></li>
+            <li><a href="#pr-cookies">Cookies</a></li>
+            <li><a href="#pr-analytics">Analytics &amp; tracking</a></li>
+            <li><a href="#pr-third-party">Third-party services</a></li>
+            <li><a href="#pr-children">Children's privacy</a></li>
+            <li><a href="#pr-changes">Changes to this policy</a></li>
+            <li><a href="#pr-contact">Contact</a></li>
+          </ol>
+        </nav>
+
+        <div class="legal-content">
+          <section class="legal-section" id="pr-overview">
+            <h2>Overview</h2>
+            <p>
+              MeroPrayas provides browser-based utility tools and is designed to process user-selected
+              content locally where supported. This policy explains what the application does with the
+              information and files you use while it runs.
+            </p>
+          </section>
+
+          <section class="legal-section" id="pr-not-collected">
+            <h2>Information we do not intentionally collect</h2>
+            <p>
+              The application does not intentionally collect, store or upload your files to a remote
+              server when the corresponding tool operates entirely locally. Selecting a file does not
+              automatically upload it anywhere. MeroPrayas has no user accounts and no built-in upload
+              endpoints in the shipped build.
+            </p>
+          </section>
+
+          <section class="legal-section" id="pr-local">
+            <h2>Local file processing</h2>
+            <p>
+              Files you select may be read and processed in your browser using local browser APIs such
+              as File, Canvas, Blob and object URLs. Generated results live in browser memory and are
+              revealed only through the app's download buttons. Please be aware that browsers,
+              operating systems, browser extensions and other software on your device have their own
+              privacy behavior that is outside this application's control.
+            </p>
+          </section>
+
+          <section class="legal-section" id="pr-storage">
+            <h2>Browser storage</h2>
+            <p>MeroPrayas uses a small amount of browser storage on your device:</p>
+            <ul>
+              <li>
+                <strong>localStorage</strong> — stores two small settings values: your chosen theme
+                (<code>pixelpress-theme</code>) and your last compression preferences such as quality,
+                format and resize size (<code>pixelpress-settings</code>).
+              </li>
+              <li>
+                <strong>Cache Storage (service worker)</strong> — the service worker precaches the app
+                shell (HTML, CSS, scripts, local fonts and icons) so the app opens offline after your
+                first visit, and runtime-caches same-origin requests it needs.
+              </li>
+            </ul>
+            <p>
+              The application does not use IndexedDB or sessionStorage. Everything stored is kept in
+              your browser on your own device and is not transmitted by the application.
+            </p>
+          </section>
+
+          <section class="legal-section" id="pr-cookies">
+            <h2>Cookies</h2>
+            <p>
+              The application itself does not set, read or use cookies.
+            </p>
+          </section>
+
+          <section class="legal-section" id="pr-analytics">
+            <h2>Analytics &amp; tracking</h2>
+            <p>
+              The application does not intentionally use analytics or tracking. There are no analytics
+              scripts, telemetry, identifiers or third-party cookies in the shipped build.
+            </p>
+          </section>
+
+          <section class="legal-section" id="pr-third-party">
+            <h2>Third-party services</h2>
+            <p>
+              MeroPrayas does not depend on any remote services to work. All assets — the Poppins, Preeti
+              and Hisab fonts, icons, and the processing libraries used by the PDF tools (<code>pdf-lib</code>,
+              <code>pdf.js</code> and <code>JSZip</code>) — are self-hosted or vendored with the
+              application. No external CDNs, remote fonts, embedded services or analytics are required.
+            </p>
+            <p>
+              Like any web page, MeroPrayas must reach your browser's own device, but after the app has
+              loaded you can continue using it without a network connection.
+            </p>
+          </section>
+
+          <section class="legal-section" id="pr-children">
+            <h2>Children's privacy</h2>
+            <p>
+              MeroPrayas is a general-purpose utility and is not directed to children. Because the
+              application does not collect personal information, no such information is knowingly
+              collected from children either.
+            </p>
+          </section>
+
+          <section class="legal-section" id="pr-changes">
+            <h2>Changes to this policy</h2>
+            <p>
+              This policy may be updated as the application changes. When it is updated, the date at the
+              top of this page will be revised. Please review it occasionally.
+            </p>
+          </section>
+
+          <section class="legal-section" id="pr-contact">
+            <h2>Contact</h2>
+            <p>
+              Questions, feedback or bug reports? Reach the developer on the
+              <a href="/contact" data-route>Contact page</a>, or write directly to
+              <a href="mailto:spanjaan@gmail.com">spanjaan@gmail.com</a>.
+            </p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Terms & Conditions ================= -->
+    <section class="view" id="view-terms">
+      <div class="page-hero legal-hero">
+        <p class="eyebrow page-eyebrow">Legal</p>
+        <h1>Terms &amp; Conditions</h1>
+        <p class="page-lede">
+          These terms govern your use of the MeroPrayas application. Please read them before using the
+          tools.
+        </p>
+        <p class="page-meta">Last updated: 9 September 2026</p>
+      </div>
+
+      <div class="legal-layout">
+        <nav class="toc" aria-label="On this page">
+          <h2 class="toc-head">
+            <span>On this page</span>
+            <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="terms-toc-list">
+              <svg aria-hidden="true"><use href="#ic-chevron-down" /></svg>
+              <span class="sr-only">Show table of contents</span>
+            </button>
+          </h2>
+          <ol id="terms-toc-list">
+            <li><a href="#tc-accept">Acceptance of terms</a></li>
+            <li><a href="#tc-use">Use of the tools</a></li>
+            <li><a href="#tc-content">User content</a></li>
+            <li><a href="#tc-guarantee">No guarantee</a></li>
+            <li><a href="#tc-files">File processing responsibility</a></li>
+            <li><a href="#tc-ip">Intellectual property</a></li>
+            <li><a href="#tc-third">Third-party software</a></li>
+            <li><a href="#tc-prohibited">Prohibited use</a></li>
+            <li><a href="#tc-liability">Limitation of liability</a></li>
+            <li><a href="#tc-changes">Changes to these terms</a></li>
+            <li><a href="#tc-contact">Contact</a></li>
+          </ol>
+        </nav>
+
+        <div class="legal-content">
+          <section class="legal-section" id="tc-accept">
+            <h2>Acceptance of terms</h2>
+            <p>
+              By using MeroPrayas, you agree to these terms and to the Privacy Policy. If you do not
+              agree, please do not use the application.
+            </p>
+          </section>
+
+          <section class="legal-section" id="tc-use">
+            <h2>Use of the tools</h2>
+            <p>
+              MeroPrayas provides browser-based tools for converting, compressing, editing and managing
+              your own files. You are responsible for the files and content you select and for how you
+              use the results.
+            </p>
+          </section>
+
+          <section class="legal-section" id="tc-content">
+            <h2>User content</h2>
+            <p>
+              You retain all rights and responsibility for the content you process. MeroPrayas does not
+              claim ownership over user files. Processing happens locally, and files are not
+              intentionally uploaded or stored remotely.
+            </p>
+          </section>
+
+          <section class="legal-section" id="tc-guarantee">
+            <h2>No guarantee</h2>
+            <p>
+              The tools are provided on an "as available" basis. Results may vary depending on your
+              browser, device, file type, file size, available memory and the browser APIs your browser
+              supports. MeroPrayas makes no promise that a particular output will be produced for every
+              input.
+            </p>
+          </section>
+
+          <section class="legal-section" id="tc-files">
+            <h2>File processing responsibility</h2>
+            <p>
+              Keep backups of important files. MeroPrayas is a convenience tool, not a storage or backup
+              service, so it should not be relied upon as the only copy of anything you care about.
+            </p>
+          </section>
+
+          <section class="legal-section" id="tc-ip">
+            <h2>Intellectual property</h2>
+            <p>
+              The MeroPrayas application, its interface, code and assets belong to its developer
+              (S.p. Anjaan). The tool behaviour and all static files ship with the app so you can run it
+              yourself; you may not redistribute, reverse-engineer (except as permitted by law) or
+              misrepresent it as your own product.
+            </p>
+          </section>
+
+          <section class="legal-section" id="tc-third">
+            <h2>Third-party software</h2>
+            <p>
+              The application uses open-source software that remains subject to its own licenses,
+              including pdf-lib (MIT), Mozilla's PDF.js (Apache-2.0), JSZip (MIT or GPLv3) and the
+              Poppins font (SIL Open Font License). Please respect their license terms.
+            </p>
+          </section>
+
+          <section class="legal-section" id="tc-prohibited">
+            <h2>Prohibited use</h2>
+            <p>You agree not to use MeroPrayas to:</p>
+            <ul>
+              <li>engage in any illegal activity;</li>
+              <li>abuse or overload the application;</li>
+              <li>attempt to compromise, break or interfere with the application; or</li>
+              <li>process content in a way that violates applicable law or third-party rights.</li>
+            </ul>
+          </section>
+
+          <section class="legal-section" id="tc-liability">
+            <h2>Limitation of liability</h2>
+            <p>
+              MeroPrayas is provided for convenience and not as a professional service. To the maximum
+              extent permitted by law, the developer is not liable for any loss or damage arising from
+              your use of the application, including corrupted or lost output files. Use the tools at
+              your own risk.
+            </p>
+          </section>
+
+          <section class="legal-section" id="tc-changes">
+            <h2>Changes to these terms</h2>
+            <p>
+              These terms may be updated as the application evolves. The date at the top of this page
+              will be revised when they change.
+            </p>
+          </section>
+
+          <section class="legal-section" id="tc-contact">
+            <h2>Contact</h2>
+            <p>
+              Questions, feedback or bug reports? Reach the developer on the
+              <a href="/contact" data-route>Contact page</a>, or write directly to
+              <a href="mailto:spanjaan@gmail.com">spanjaan@gmail.com</a>.
+            </p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Contact ================= -->
+    <section class="view" id="view-contact" hidden>
+      <div class="page-hero contact-hero">
+        <p class="eyebrow page-eyebrow">Contact</p>
+        <h1>Get in touch</h1>
+        <p class="page-lede">
+          Have a question, a bug report or a feature idea? Reach out — every message is read.
+        </p>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-main">
+          <section class="info-panel card contact-card">
+            <h2>Let's talk</h2>
+            <p>
+              I'm <strong>S.p. Anjaan</strong>, the developer behind MeroPrayas. Whether you hit a
+              snag with a tool, want the app to do something new, or just want to say thanks, I'd
+              love to hear from you.
+            </p>
+            <a class="btn btn-primary btn-lg contact-cta" href="mailto:spanjaan@gmail.com">
+              <svg aria-hidden="true"><use href="#ic-mail" /></svg>
+              <span>Email Me</span>
+            </a>
+            <p class="contact-hint">Replies usually arrive within a few days · spanjaan@gmail.com</p>
+          </section>
+
+          <section class="info-panel card contact-social">
+            <h2>Connect</h2>
+            <div class="social-row">
+              <a class="social-card social-facebook" href="https://www.facebook.com/spanjaan" target="_blank" rel="noopener noreferrer">
+                <span class="social-icon" aria-hidden="true"><svg><use href="#ic-facebook" /></svg></span>
+                <span class="social-body">
+                  <span class="social-name">Facebook</span>
+                  <span class="social-handle">@spanjaan</span>
+                </span>
+              </a>
+              <a class="social-card social-whatsapp" href="https://wa.me/9770000000000" target="_blank" rel="noopener noreferrer">
+                <span class="social-icon" aria-hidden="true"><svg><use href="#ic-whatsapp" /></svg></span>
+                <span class="social-body">
+                  <span class="social-name">WhatsApp</span>
+                  <span class="social-handle">Message me</span>
+                </span>
+              </a>
+              <a class="social-card social-youtube" href="https://www.youtube.com/@spanjaan" target="_blank" rel="noopener noreferrer">
+                <span class="social-icon" aria-hidden="true"><svg><use href="#ic-youtube" /></svg></span>
+                <span class="social-body">
+                  <span class="social-name">YouTube</span>
+                  <span class="social-handle">@spanjaan</span>
+                </span>
+              </a>
+            </div>
+          </section>
+
+          <section class="info-panel card help-section">
+            <h2>Help</h2>
+            <div class="help-grid">
+              <div class="help-card">
+                <h3><svg aria-hidden="true"><use href="#ic-image" /></svg> Compress images</h3>
+                <p>Open the <a class="help-link" href="/compressor" data-route>Image Compressor</a>, drop your files, pick quality and size, then hit "Compress all".</p>
+              </div>
+              <div class="help-card">
+                <h3><svg aria-hidden="true"><use href="#ic-type" /></svg> Convert Nepali text</h3>
+                <p>Use the <a class="help-link" href="/unicode" data-route>Unicode Converter</a> to switch between Preeti, Unicode and Hisab typing.</p>
+              </div>
+              <div class="help-card">
+                <h3><svg aria-hidden="true"><use href="#ic-file-text" /></svg> Edit PDFs</h3>
+                <p>Merge, split, compress and convert PDFs with the <a class="help-link" href="/pdf-editor" data-route>PDF Tools</a> — no uploads needed.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="info-panel card faq-section">
+            <h2>Frequently asked questions</h2>
+            <details class="faq-item" open>
+              <summary>Is MeroPrayas really private and offline?</summary>
+              <p>Yes. Every tool runs in your browser and files are never uploaded to a server. After your first visit the app works offline too.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Does the app collect any data about me?</summary>
+              <p>No accounts, no analytics, no tracking scripts. Only your theme and last image settings are stored locally on your own device.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Why did my converted Nepali text come out wrong?</summary>
+              <p>Make sure the "From" format matches the text you pasted — Preeti text in the Unicode field won't convert correctly. Check both selects and try the swap (⇄) button.</p>
+            </details>
+            <details class="faq-item">
+              <summary>What image formats does the compressor support?</summary>
+              <p>JPG, PNG, WebP, GIF, BMP and SVG are accepted, and you can export to JPG, PNG or WebP at your chosen size and quality.</p>
+            </details>
+            <details class="faq-item">
+              <summary>How fast will I get a reply to my email?</summary>
+              <p>Usually within a few days. For quicker questions, the WhatsApp channel is the fastest way to reach me.</p>
+            </details>
+          </section>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-head">
+          <img class="footer-mark" src="assets/icons/logo.svg" alt="">
+          <span class="footer-brand-name">MeroPrayas</span>
+        </div>
+        <p class="footer-tag">Private, offline-first image &amp; PDF tools that run entirely in your browser.</p>
+        <span class="footer-badge"><svg aria-hidden="true"><use href="#ic-shield-check" /></svg> Runs on-device</span>
+      </div>
+
+      <nav class="footer-cols" aria-label="Footer">
+        <div class="footer-col">
+          <h4>Tools</h4>
+          <a href="/compressor" data-route>Image Compressor</a>
+          <a href="/pdf-editor" data-route>PDF Editor</a>
+          <a href="/unicode" data-route>Unicode Converter</a>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="/" data-route>Home</a>
+          <a href="/about" data-route>About</a>
+          <a href="/how-it-works" data-route>How It Works</a>
+          <a href="/contact" data-route>Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="/privacy" data-route>Privacy Policy</a>
+          <a href="/terms" data-route>Terms &amp; Conditions</a>
+          <p class="footer-note">No accounts. No ads. No analytics. Your files are processed locally in your browser.</p>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="year">2026</span> MeroPrayas · Crafted locally by <strong>S.p. Anjaan</strong></p>
+      <p class="footer-mini">Built with web standards — works offline after your first visit.</p>
+    </div>
+  </footer>
+
+  <dialog id="cropDialog" class="crop-dialog" aria-labelledby="cropDialogTitle">
+    <div class="crop-shell pro-crop-shell">
+      <header class="pro-crop-topbar">
+        <div class="pro-crop-title">
+          <div class="pro-crop-icon">⌗</div>
+          <div>
+            <h2 id="cropDialogTitle">Image Editor</h2>
+            <p>Crop, rotate, flip, resize, quality and output format.</p>
+          </div>
+        </div>
+        <div class="pro-crop-zoombar">
+          <button class="icon-btn" id="cropZoomOut" type="button" aria-label="Zoom out">−</button>
+          <input id="cropZoomRange" type="range" min="25" max="200" value="100" aria-label="Zoom">
+          <strong id="cropZoomValue">100%</strong>
+          <button class="icon-btn" id="cropZoomIn" type="button" aria-label="Zoom in">+</button>
+          <button class="icon-btn" id="cropFitBtn" type="button" title="Fit image" aria-label="Fit image">Fit</button>
+        </div>
+        <div class="pro-crop-history"><button class="icon-btn" id="cropUndo" type="button" aria-label="Undo edit">↶</button><button
+            class="icon-btn muted" id="cropRedo" type="button" aria-label="Redo edit">↷</button><button class="reset-pro" id="cropReset"
+            type="button">Reset</button></div>
+      </header>
+
+      <div class="pro-crop-body">
+        <section class="pro-crop-main">
+          <div class="pro-crop-canvas" id="cropStage" tabindex="0" aria-label="Crop area. Use arrow keys to nudge the selection.">
+            <div class="crop-meta top-left" id="cropCoordinates">X: 0 · Y: 0 · W: 0 · H: 0</div>
+            <div class="crop-meta top-right" id="cropSizeBadge">—</div>
+            <img id="cropImage" alt="Image editor canvas">
+            <div id="cropBox" class="crop-box" aria-label="Crop selection">
+              <div class="crop-grid" aria-hidden="true"></div>
+              <div class="crop-center"><span>Drag to move</span></div>
+              <div class="crop-handle nw" data-mode="nw" aria-label="Resize top left"></div>
+              <div class="crop-handle n" data-mode="n" aria-label="Resize top"></div>
+              <div class="crop-handle ne" data-mode="ne" aria-label="Resize top right"></div>
+              <div class="crop-handle e" data-mode="e" aria-label="Resize right"></div>
+              <div class="crop-handle se" data-mode="se" aria-label="Resize bottom right"></div>
+              <div class="crop-handle s" data-mode="s" aria-label="Resize bottom"></div>
+              <div class="crop-handle sw" data-mode="sw" aria-label="Resize bottom left"></div>
+              <div class="crop-handle w" data-mode="w" aria-label="Resize left"></div>
+            </div>
+            <div id="perspOverlay" class="persp-overlay" hidden aria-hidden="true">
+              <svg class="persp-shapes" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <path id="perspShade" class="persp-shade" fill-rule="evenodd" d=""></path>
+                <path id="perspBorder" class="persp-border" vector-effect="non-scaling-stroke" d=""></path>
+              </svg>
+              <button class="persp-handle" data-index="0" type="button" aria-label="Top left corner"></button>
+              <button class="persp-handle" data-index="1" type="button" aria-label="Top right corner"></button>
+              <button class="persp-handle" data-index="2" type="button" aria-label="Bottom right corner"></button>
+              <button class="persp-handle" data-index="3" type="button" aria-label="Bottom left corner"></button>
+            </div>
+            <div class="crop-dim-label" id="cropDimLabel">—</div>
+          </div>
+          <div class="editor-canvas-footer">
+            <span class="editor-canvas-hint">Drag crop to move · drag handles to resize · use the zoom control
+              above</span>
+            <span class="canvas-size"><span id="cropSourceDims">—</span><span class="canvas-size-sep">·</span><span
+                id="cropOutputDims">—</span></span>
+          </div>
+        </section>
+
+        <aside class="crop-inspector" aria-label="Editor settings">
+          <section class="inspector-section">
+            <div class="inspector-section-title">
+              <div><span class="section-kicker">EDIT</span>
+                <h3>Crop</h3>
+              </div><span id="editorSettingsSaved" class="save-state">Unsaved</span>
+            </div>
+            <div class="aspect-grid" id="cropPresetRow">
+              <button class="aspect-btn active" data-ratio="free">Free</button>
+              <button class="aspect-btn" data-ratio="1">1:1</button>
+              <button class="aspect-btn" data-ratio="1.333333">4:3</button>
+              <button class="aspect-btn" data-ratio="1.777778">16:9</button>
+              <button class="aspect-btn" data-ratio="1.5">3:2</button>
+              <button class="aspect-btn" data-ratio="0.5625">9:16</button>
+            </div>
+          </section>
+
+          <section class="inspector-section">
+            <div class="inspector-section-title">
+              <div><span class="section-kicker">EDIT</span>
+                <h3>Perspective Correction</h3>
+              </div>
+            </div>
+            <p class="help">Straighten skewed photos or documents: drag the four corner handles to match the real
+              surface, then apply.</p>
+            <button class="btn btn-secondary btn-block" id="perspModeBtn" type="button" aria-pressed="false">✥
+              Perspective mode</button>
+            <button class="btn btn-soft btn-small persp-auto" id="perspAutoBtn" type="button"
+              title="Automatically detect document corners">◎ Auto Detect</button>
+            <div class="persp-actions">
+              <button class="btn btn-soft btn-small" id="perspResetBtn" type="button" disabled>Reset</button>
+              <button class="btn btn-primary btn-small" id="perspApplyBtn" type="button" disabled>Apply
+                Perspective</button>
+              <button class="btn btn-ghost btn-small" id="perspCancelBtn" type="button" disabled>Cancel</button>
+            </div>
+          </section>
+
+          <section class="inspector-section">
+            <div class="inspector-section-title">
+              <div><span class="section-kicker">TRANSFORM</span>
+                <h3>Rotate & Flip</h3>
+              </div>
+            </div>
+            <div class="transform-grid">
+              <button class="action-btn" id="cropRotateLeft" type="button"><span>↶</span> 90°</button>
+              <button class="action-btn" id="cropRotateReset" type="button"><span>↺</span> Reset</button>
+              <button class="action-btn" id="cropRotateRight" type="button"><span>↷</span> 90°</button>
+              <button class="action-btn" id="cropFlipH" type="button"><span>↔</span> Flip H</button>
+              <button class="action-btn" id="cropFlipV" type="button"><span>↕</span> Flip V</button>
+            </div>
+          </section>
+
+          <section class="inspector-section">
+            <div class="inspector-section-title">
+              <div><span class="section-kicker">SIZE</span>
+                <h3>Image Dimensions</h3>
+              </div>
+            </div>
+            <div class="size-preset-grid" id="sizePresetRow">
+              <button class="size-btn" type="button" data-size="480">480 px</button>
+              <button class="size-btn" type="button" data-size="720">720 px</button>
+              <button class="size-btn" type="button" data-size="1080">1080 px</button>
+              <button class="size-btn" type="button" data-size="1440">1440 px</button>
+              <button class="size-btn" type="button" data-size="1920">1920 px</button>
+              <button class="size-btn" type="button" data-size="custom">Custom</button>
+            </div>
+            <div class="custom-size-row" id="customSizeFields" hidden>
+              <label class="field"><span>Width</span><input id="customWidth" type="number" min="1" max="16384"
+                  placeholder="1080" inputmode="numeric"></label>
+              <span class="dim-sep">×</span>
+              <label class="field"><span>Height</span><input id="customHeight" type="number" min="1" max="16384"
+                  placeholder="1080" inputmode="numeric"></label>
+              <button class="size-lock" id="sizeLockBtn" type="button" aria-pressed="true"
+                title="Lock aspect ratio to the selected crop">
+                <svg aria-hidden="true"><use href="#ic-link" /><use href="#ic-slash" class="lock-slash" /></svg>
+              </button>
+            </div>
+            <div class="size-output-row">
+              <span class="size-output-label">Output</span>
+              <strong class="size-output-value" id="sizeOutputValue">—</strong>
+            </div>
+          </section>
+
+          <section class="inspector-section output-section">
+            <div class="inspector-section-title">
+              <div><span class="section-kicker">OUTPUT</span>
+                <h3>Compression</h3>
+              </div>
+            </div>
+            <div class="setting-label-row"><label for="quality">Quality</label><strong id="qualityValue">80%</strong>
+            </div>
+            <input id="quality" class="range" type="range" min="10" max="100" value="80">
+            <div class="range-labels"><span>Smaller</span><span>Sharper</span></div>
+            <label class="field format-field"><span>Format</span><select id="format" class="select">
+                <option value="auto">Keep original</option>
+                <option value="image/webp">WebP</option>
+                <option value="image/jpeg">JPEG</option>
+                <option value="image/jpg">JPG</option>
+                <option value="image/png">PNG</option>
+              </select></label>
+            <p class="help" id="formatNote">WebP is usually the best size/quality balance.</p>
+            <button class="btn btn-ghost btn-small btn-block apply-all" id="applyAllBtn" type="button">Apply settings to
+              all</button>
+          </section>
+        </aside>
+      </div>
+
+      <div class="crop-preview-overlay" id="cropPreviewOverlay" hidden>
+        <div class="crop-preview-card">
+          <div class="crop-preview-head">
+            <div>
+              <h3>Crop result</h3>
+              <p id="cropPreviewMeta">Preview only · nothing has been applied</p>
+            </div>
+            <div class="crop-preview-head-actions">
+              <span class="preview-zoom-chip" id="cropPreviewZoom">100%</span>
+              <button class="preview-close-btn" id="cropPreviewClose" type="button" aria-label="Close preview">
+                <svg aria-hidden="true"><use href="#ic-x" /></svg>
+              </button>
+            </div>
+          </div>
+          <div class="crop-preview-frame" id="cropPreviewFrame"><img id="cropPreviewImage" alt="Crop preview"
+              draggable="false"></div>
+          <div class="crop-preview-foot"><span>Nothing is saved until you click <strong>Apply edits</strong> · scroll to
+              zoom · drag to pan</span><button class="btn btn-primary" id="cropPreviewClose2" type="button">Back to
+              editor</button></div>
+        </div>
+      </div>
+      <footer class="pro-crop-footer">
+        <div class="pro-crop-footer-left">
+          <button class="btn btn-secondary" id="cancelCrop">Cancel</button>
+          <button class="btn btn-ghost" id="skipCrop" type="button">Skip</button>
+        </div>
+        <div><button class="btn btn-secondary preview-pro" id="cropPreviewBtn" type="button">Preview</button><button
+            class="btn btn-primary" id="applyCrop">Apply edits</button></div>
+      </footer>
+      <div id="perspMagnifier" class="persp-magnifier" hidden aria-hidden="true">
+        <canvas id="perspMagnifierCanvas" class="persp-magnifier-canvas" width="132" height="132"></canvas>
+        <div class="persp-magnifier-cross"><i class="persp-magnifier-dot"></i></div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="js/util.js"></script>
+  <script src="js/compressor.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/preeti-map.js"></script>
+  <script src="js/hisab-map.js"></script>
+  <script src="js/unicode-converter.js"></script>
+  <script src="js/unicode-ui.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

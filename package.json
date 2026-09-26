@@ -1,0 +1,19 @@
+{
+  "name": "meroprayas",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Private offline-first PWA — compress images, convert Nepali text (Preeti/Unicode/Hisab), merge & edit PDFs. Runs entirely in the browser.",
+  "scripts": {
+    "test": "playwright test",
+    "lint": "eslint js/"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "eslint": "^8.57.0"
+  },
+  "dependencies": {
+    "jszip": "^3.10.1",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^3.11.174"
+  }
+}

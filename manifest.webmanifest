@@ -1,0 +1,18 @@
+{
+  "name": "MeroPrayas — Tools",
+  "short_name": "MeroPrayas",
+  "description": "Simple, fast and useful tools for everyday work — private, offline-first.",
+  "start_url": "./",
+  "id": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f7fb",
+  "theme_color": "#111827",
+  "icons": [
+    {"src":"assets/icons/icon-192x192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"assets/icons/icon-512x512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ],
+  "screenshots": [
+    {"src":"assets/og-card.png","sizes":"1200x630","type":"image/png","form_factor":"wide","label":"MeroPrayas — compress images, convert Nepali text, edit PDFs"}
+  ]
+}
