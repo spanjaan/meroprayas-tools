@@ -1,6 +1,6 @@
 {
-  "name": "MeroPrayas — Tools",
-  "short_name": "MeroPrayas",
+  "name": "MP-Tools",
+  "short_name": "MP-Tools",
   "description": "Simple, fast and useful tools for everyday work — private, offline-first.",
   "start_url": "./",
   "id": "./",
@@ -13,6 +13,6 @@
     {"src":"assets/icons/icon-512x512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
   ],
   "screenshots": [
-    {"src":"assets/og-card.png","sizes":"1200x630","type":"image/png","form_factor":"wide","label":"MeroPrayas — compress images, convert Nepali text, edit PDFs"}
+    {"src":"assets/og-card.png","sizes":"1200x630","type":"image/png","form_factor":"wide","label":"MeroPrayas-compress images, convert Nepali text, edit PDFs"}
   ]
 }
