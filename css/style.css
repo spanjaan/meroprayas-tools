@@ -1538,6 +1538,129 @@ body:has(.crop-dialog[open]) {
   overflow: hidden
 }
 
+/* ---------- Install help sheet ----------
+   Shown where no beforeinstallprompt exists (iOS) or none was captured yet
+   (in-app browsers), so the button is never a dead end. */
+.install-help {
+  max-width: min(94vw, 460px);
+  width: 460px
+}
+
+.install-help-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 1.4rem 1.35rem 1.2rem
+}
+
+.install-help-head {
+  display: flex;
+  align-items: flex-start;
+  gap: .85rem
+}
+
+.install-help-icon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  color: var(--accent);
+  background: var(--accent-soft)
+}
+
+.install-help-head h2 {
+  margin: 0 0 .2rem;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: -.01em
+}
+
+.install-help-head p {
+  margin: 0;
+  font-size: .8125rem;
+  line-height: 1.5;
+  color: var(--text-muted)
+}
+
+.install-steps {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step
+}
+
+.install-steps li {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  font-size: .875rem;
+  line-height: 1.5
+}
+
+.install-steps strong {
+  font-weight: 600;
+  color: var(--text)
+}
+
+.install-step-num {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: .75rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft)
+}
+
+.install-step-text {
+  flex: 1 1 auto;
+  min-width: 0
+}
+
+/* Only meaningful for the iOS share-sheet step. */
+.install-step-icon {
+  flex-shrink: 0;
+  color: var(--accent)
+}
+
+.install-help-note {
+  margin: 0;
+  padding: .7rem .8rem;
+  font-size: .75rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md)
+}
+
+.install-help-foot {
+  display: flex;
+  justify-content: flex-end
+}
+
+body:has(.install-help[open]) {
+  overflow: hidden
+}
+
+@media (max-width: 420px) {
+  .install-help-shell {
+    padding: 1.2rem 1.1rem 1rem
+  }
+
+  .install-help-head h2 {
+    font-size: 1rem
+  }
+}
+
 @keyframes dlg-in {
   from {
     opacity: 0;

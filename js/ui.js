@@ -9,6 +9,9 @@ const UI = (() => {
     editorCard: $('editorCard'), imageList: $('imageList'),
     imageCountHeading: $('imageCountHeading'), editorSettingsSaved: $('editorSettingsSaved'),
     installBtn: $('installBtn'),
+    installHelpDialog: $('installHelpDialog'), installHelpSubtitle: $('installHelpSubtitle'),
+    installHelpSteps: $('installHelpSteps'), installHelpStepIcon: $('installHelpStepIcon'),
+    installHelpClose: $('installHelpClose'),
     themeBtn: $('themeBtn'),
     navToggle: $('navToggle'), primaryNav: $('primaryNav'), navScrim: $('navScrim'), navClose: $('navClose'),
     processAllBtn: $('processAllBtn'), downloadAllBtn: $('downloadAllBtn'), clearBtn: $('clearBtn'),
@@ -1643,24 +1646,135 @@ const UI = (() => {
     });
   }
 
+  /* ---------- Install prompt ----------
+     'installed'  -> running as a standalone app, button hidden
+     'ios'        -> Safari: no prompt event exists, so explain Add to Home Screen
+     'chromium'   -> prompt event may or may not have arrived yet
+     'unsupported'-> browser cannot install, button hidden
+
+     A beforeinstallprompt event can only be used once, and a user who dismisses
+     the native dialog should still be able to try again, so the button is
+     re-armed instead of being hidden after every click. */
+  const INSTALL_STEPS = {
+    ios: [
+      'Tap the <strong>Share</strong> button in the Safari toolbar.',
+      'Scroll down and tap <strong>Add to Home Screen</strong>.',
+      'Tap <strong>Add</strong> to confirm. MeroPrayas then opens like a normal app.'
+    ],
+    chromium: [
+      'Open your browser menu — the <strong>⋮</strong> button in the toolbar.',
+      'Tap <strong>Install app</strong>, or <strong>Add to Home screen</strong> on Android.',
+      'Confirm to add MeroPrayas to your home screen.'
+    ]
+  };
+
+  const INSTALL_SUBTITLE = {
+    ios: 'Safari installs apps from the share menu. It takes a few taps.',
+    chromium: 'Your browser can add MeroPrayas to your home screen.'
+  };
+
+  let installMode = 'unsupported';
+
+  function syncInstallButton() {
+    const show = installMode !== 'installed' && installMode !== 'unsupported';
+    els.installBtn.hidden = !show;
+    // Hidden means there is nothing to click, so keep it inert rather than
+    // re-arming a button the user can still reach with a stray tap.
+    els.installBtn.disabled = !show;
+    if (!show) return;
+    // Keep the visible label short: the topbar is tight at 320px and sits
+    // beside the theme and menu buttons. The aria-label carries the detail.
+    els.installBtn.textContent = 'Install';
+    els.installBtn.setAttribute('aria-label',
+      installMode === 'ios' ? 'Add MeroPrayas to your home screen' : 'Install MeroPrayas');
+  }
+
+  function configureInstall(mode) {
+    if (installMode === 'native' && mode !== 'installed') {
+      // A real prompt event already upgraded the button; don't downgrade it.
+      return;
+    }
+    installMode = mode;
+    syncInstallButton();
+  }
+
   function setInstallHandler(promptEvent) {
-    deferredInstall = promptEvent;
-    els.installBtn.hidden = false;
-    els.installBtn.onclick = async () => {
-      deferredInstall.prompt();
-      await deferredInstall.userChoice;
-      els.installBtn.hidden = true;
-      deferredInstall = null;
-    };
+    deferredInstall = promptEvent || null;
+    if (promptEvent) installMode = 'native';
+    syncInstallButton();
   }
 
   function markInstalled() {
     deferredInstall = null;
-    els.installBtn.hidden = true;
+    installMode = 'installed';
+    syncInstallButton();
+  }
+
+  function openInstallHelp() {
+    const dialog = els.installHelpDialog;
+    if (!dialog) return;
+    const variant = installMode === 'ios' ? 'ios' : 'chromium';
+    const steps = INSTALL_STEPS[variant];
+    dialog.dataset.variant = variant;
+    if (els.installHelpSubtitle) els.installHelpSubtitle.textContent = INSTALL_SUBTITLE[variant];
+    if (els.installHelpSteps) {
+      const items = els.installHelpSteps.querySelectorAll('li');
+      items.forEach((item, index) => {
+        const text = item.querySelector('.install-step-text');
+        if (text) text.innerHTML = steps[index] || '';
+      });
+    }
+    // `hidden` is an HTMLElement IDL property, not an SVGElement one, so assigning
+    // `svg.hidden = false` would leave the attribute in place. Use toggleAttribute.
+    if (els.installHelpStepIcon) {
+      els.installHelpStepIcon.toggleAttribute('hidden', variant !== 'ios');
+    }
+    if (typeof dialog.showModal === 'function') {
+      if (!dialog.open) dialog.showModal();
+    }
+  }
+
+  async function handleInstallClick() {
+    const promptEvent = deferredInstall;
+    if (!promptEvent) {
+      openInstallHelp();
+      return;
+    }
+    // The event is single-use: clear it up front so a second click while the
+    // native dialog is open falls through to the help sheet instead of throwing.
+    deferredInstall = null;
+    els.installBtn.disabled = true;
+    try {
+      await promptEvent.prompt();
+      const choice = await promptEvent.userChoice;
+      if (choice && choice.outcome === 'accepted') {
+        markInstalled();
+        return;
+      }
+    } catch (err) {
+      console.warn('Install prompt failed:', err);
+    }
+    // Dismissed (or the prompt failed): re-arm so the user can try again.
+    // A further click now finds no prompt event and opens the help sheet.
+    els.installBtn.disabled = false;
+  }
+
+  function bindInstallHelp() {
+    if (els.installBtn) els.installBtn.addEventListener('click', handleInstallClick);
+    if (els.installHelpClose && els.installHelpDialog) {
+      els.installHelpClose.addEventListener('click', () => els.installHelpDialog.close());
+    }
+    if (els.installHelpDialog) {
+      // Click on the backdrop (outside the shell) dismisses the sheet.
+      els.installHelpDialog.addEventListener('click', event => {
+        if (event.target === els.installHelpDialog) els.installHelpDialog.close();
+      });
+    }
   }
 
   function init() {
     bind();
+    bindInstallHelp();
     if (persistedSettings.quality) {
       els.quality.value = persistedSettings.quality;
       els.qualityValue.textContent = `${persistedSettings.quality}%`;
@@ -1673,5 +1787,5 @@ const UI = (() => {
     if (els.customSizeFields) els.customSizeFields.hidden = sizePreset !== 'custom';
   }
 
-  return { init, setInstallHandler, markInstalled };
+  return { init, configureInstall, setInstallHandler, markInstalled };
 })();

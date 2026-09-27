@@ -15,6 +15,12 @@
   <meta name="application-name" content="MeroPrayas">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- iOS ignores the unprefixed names above; without this, Add to Home Screen
+       launches a browser tab instead of a standalone app. -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- `default` rather than black-translucent: the stylesheet only handles
+       safe-area-inset-bottom, so translucent would hide content under the status bar. -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="MeroPrayas">
   <link rel="canonical" href="https://meroprayas.com/">
   <meta property="og:type" content="website">
@@ -308,7 +314,7 @@
     </nav>
 
     <div class="top-actions">
-      <button class="btn btn-ghost" id="installBtn" hidden>Install</button>
+      <button class="btn btn-ghost" id="installBtn" type="button" hidden>Install</button>
       <button class="btn btn-ghost theme-toggle" id="themeBtn" type="button" aria-label="Toggle theme"
         aria-pressed="false">
         <svg class="theme-icon theme-moon" aria-hidden="true">
@@ -1917,6 +1923,59 @@
         <canvas id="perspMagnifierCanvas" class="persp-magnifier-canvas" width="132" height="132"></canvas>
         <div class="persp-magnifier-cross"><i class="persp-magnifier-dot"></i></div>
       </div>
+    </div>
+  </dialog>
+
+  <dialog id="installHelpDialog" class="install-help" aria-labelledby="installHelpTitle"
+    data-variant="generic">
+    <div class="install-help-shell">
+      <header class="install-help-head">
+        <div class="install-help-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v12" />
+            <path d="m7 10 5 5 5-5" />
+            <path d="M5 21h14" />
+          </svg>
+        </div>
+        <div>
+          <h2 id="installHelpTitle">Install MeroPrayas</h2>
+          <p id="installHelpSubtitle">Add it to your home screen for faster access and offline use.</p>
+        </div>
+      </header>
+
+      <!-- Copy for each step is filled in by js/ui.js from a lookup table,
+           so iOS and generic Chromium wording share one list. -->
+      <ol class="install-steps" id="installHelpSteps">
+        <li>
+          <span class="install-step-num">1</span>
+          <span class="install-step-text"></span>
+          <svg class="install-step-icon" id="installHelpStepIcon" aria-hidden="true" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"
+            stroke-linejoin="round" hidden>
+            <path d="M12 3v13" />
+            <path d="m8 7 4-4 4 4" />
+            <path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" />
+          </svg>
+        </li>
+        <li>
+          <span class="install-step-num">2</span>
+          <span class="install-step-text"></span>
+        </li>
+        <li>
+          <span class="install-step-num">3</span>
+          <span class="install-step-text"></span>
+        </li>
+      </ol>
+
+      <p class="install-help-note">
+        Everything still works in the browser — installing is entirely optional and your files never
+        leave your device.
+      </p>
+
+      <footer class="install-help-foot">
+        <button class="btn btn-secondary" id="installHelpClose" type="button">Got it</button>
+      </footer>
     </div>
   </dialog>
 

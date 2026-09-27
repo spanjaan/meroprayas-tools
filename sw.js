@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-const CACHE = 'pixelpress-v40';
+const CACHE = 'pixelpress-v41';
 const MAX_RUNTIME_ENTRIES = 120;
 const ASSETS = [
   './',
@@ -47,7 +47,7 @@ const ASSETS = [
   './assets/icons/icon.svg',
   './assets/icons/icon-192x192.png',
   './assets/icons/icon-512x512.png',
-  './assets/developer-avatar.svg',
+  './assets/developer.webp',
   './assets/og-card.png'
 ];
 
