@@ -16,13 +16,13 @@ const Router = (() => {
     '/': {
       view: 'home',
       nav: '/',
-      title: 'MeroPrayas — Online Image, PDF & Unicode Converter Tools',
+      title: 'MeroPrayas - Online Image, PDF & Unicode Converter Tools',
       description: 'Free online tools by S.p. Anjaan — compress images, convert Nepali text (Preeti, Unicode & Hisab), and merge or edit PDF files. Private, offline-first, no uploads.'
     },
     '/compressor': {
       view: 'workspace',
       nav: '/compressor',
-      title: 'MeroPrayas-Image Compressor',
+      title: 'MeroPrayas - Image Compressor',
       description: 'Compress JPG, PNG, WebP, GIF, BMP and SVG images online — adjust quality, size and format with live previews, entirely in your browser.',
       icon: ICONS.compressor,
       heading: 'Image Compressor',
@@ -31,7 +31,7 @@ const Router = (() => {
     '/unicode': {
       view: 'unicode',
       nav: '/unicode',
-      title: 'MeroPrayas-Unicode Converter',
+      title: 'MeroPrayas - Unicode Converter',
       description: 'Convert Nepali text between Unicode, Preeti and Hisab instantly in your browser. No uploads, works offline.',
       icon: ICONS.unicode,
       heading: 'Unicode Converter',
@@ -40,7 +40,7 @@ const Router = (() => {
     '/pdf-editor': {
       view: 'pdf-editor',
       nav: '/pdf-editor',
-      title: 'MeroPrayas-PDF Tools',
+      title: 'MeroPrayas - PDF Tools',
       description: 'Merge, split, compress and convert PDF files online — JPG to PDF, PDF to JPG and more, entirely on your device.',
       icon: ICONS.pdf,
       heading: 'PDF Tools',
@@ -49,31 +49,31 @@ const Router = (() => {
     '/about': {
       view: 'about',
       nav: '/about',
-      title: 'MeroPrayas — About',
+      title: 'MeroPrayas - About',
       description: 'About MeroPrayas and its developer S.p. Anjaan — private, offline-first browser tools for images, PDFs and Nepali text.'
     },
     '/how-it-works': {
       view: 'how-it-works',
       nav: '/how-it-works',
-      title: 'MeroPrayas — How It Works',
+      title: 'MeroPrayas - How It Works',
       description: 'How MeroPrayas works: everything runs locally in your browser — compress images, convert Nepali text and edit PDFs with no uploads.'
     },
     '/privacy': {
       view: 'privacy',
       nav: '/privacy',
-      title: 'MeroPrayas — Privacy Policy',
+      title: 'MeroPrayas - Privacy Policy',
       description: 'MeroPrayas privacy policy — files are processed locally in your browser; no accounts, no ads, no analytics.'
     },
     '/terms': {
       view: 'terms',
       nav: '/terms',
-      title: 'MeroPrayas — Terms & Conditions',
+      title: 'MeroPrayas - Terms & Conditions',
       description: 'MeroPrayas terms and conditions — free browser tools for images, PDFs and Nepali text, provided as available.'
     },
     '/contact': {
       view: 'contact',
       nav: '/contact',
-      title: 'MeroPrayas — Contact',
+      title: 'MeroPrayas - Contact',
       description: 'Contact S.p. Anjaan (spanjaan@gmail.com) — questions, bug reports and feature ideas for MeroPrayas. Connect on Facebook, WhatsApp and YouTube.'
     }
   };
