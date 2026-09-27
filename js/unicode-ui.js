@@ -36,8 +36,8 @@ const UnicodeUI = (() => {
       output: 'sGe6]{8 lk|tL 6]S:6 oxfF b]vLg]5 .'
     },
     hisab: {
-      input: "lx;fa ^]S:^ oxfF ^fOk\nug{'xf]; jf k]i^ ug'{xf]; .",
-      output: "sGe^]{\\* lx;fa ^]S:^\noxfF b]vLg]% ."
+      input: "lx;fa ^]S:^ oxfF ^fOk ug{'xf]; jf k]i^ ug'{xf]; .",
+      output: "sGe^]{* lx;fa ^]S:^ oxfF b]vLg]% ."
     }
   };
 
