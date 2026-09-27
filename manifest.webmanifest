@@ -1,7 +1,7 @@
 {
   "name": "MP-Tools",
   "short_name": "MP-Tools",
-  "description": "Simple, fast and useful tools for everyday work — private, offline-first.",
+  "description": "Simple, fast and useful tools for everyday work - private, offline-first.",
   "start_url": "./",
   "id": "./",
   "scope": "./",
